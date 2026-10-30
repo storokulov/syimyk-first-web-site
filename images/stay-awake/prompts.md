@@ -33,3 +33,13 @@ Cast heroes came back on the light-blue background (good). Keyed with
 `key_flat.py raw/<n>-hero.png raw/<n>-hero-cut.png` (border-connected + enclosed pockets of the background
 colour, un-blended rim), trimmed to `shorts/stay-awake/sprites/<n>-hero.png`, checked in `qa/cast-sheet.png`
 (`sheet.py`). No edge cut-offs. Bob has soft airbrush shading, a bit off the flat style; fine for now.
+
+## Poses batch 1 (reference = that character's hero sprite)
+CHAIR = "a simple wooden chair with a light-brown seat and four straight legs, side view"
+- max-sit (2:3): Max sitting upright on CHAIR, three-quarter view facing right, both hands on his knees,
+  the green can held in the hand on the RIGHT side of the image, confident grin.
+- max-stare (4:5, waist-up close-up): Max facing the viewer, centred, eyes HUGE and wide open, tiny pupils,
+  eyebrows raised high, mouth a straight tight line, dark bags under the eyes, hair messier.
+- lily-sit (2:3): Lily sitting on CHAIR, legs crossed, arms crossed, smug smile, three-quarter view facing left.
+- bob-sit (2:3): Bob slouching on CHAIR, facing the viewer, sleepy half-closed eyes, white mug held in both
+  hands on his lap.
