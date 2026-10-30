@@ -9,3 +9,22 @@ painted into an RGB image (no alpha), so:
 
 Known limits: hair spike tips (top, left) and shoe soles touch the canvas edge, so they are cut flat.
 Next pictures: wide margin on every side, opaque flat #9BCFFD background (keyed here), no text on props.
+
+## Cast heroes (reference: max-hero.png; opaque #9BCFFD background, 2:3)
+Shared tail for every prompt:
+"Full body, three-quarter view, the WHOLE character fits inside the image with a wide empty margin on
+every side: hair, hands and shoes must not touch the edges. Thick bold black outlines of even weight,
+flat colours, no gradients, clean vector-like linework, no texture, no text, no letters, no logos.
+Background: a plain flat solid light-blue colour (#9BCFFD), nothing else, no checkerboard, no shadow."
+
+- lily-hero: same style as reference; Lily, big round head, high purple ponytail, big white oval eyes with
+  black pupils and three lashes, thin confident eyebrows, small rounded nose, a smug closed-mouth smile;
+  yellow t-shirt, green shorts, purple sneakers; arms crossed. Facing LEFT.
+- bob-hero: same style; Bob, big round head, short messy brown hair, heavy half-closed sleepy eyelids over
+  white oval eyes, relaxed flat eyebrows, small rounded nose, a lazy little smile; oversized light-grey
+  pyjama-like sweatshirt, dark grey sweatpants, fluffy blue slippers; holds a white coffee mug with no print
+  in the hand on the RIGHT side of the image. Facing the viewer.
+- host-hero: same style; the Host, big round head, slicked-back black hair, big white oval eyes with black
+  pupils, raised eyebrows, small rounded nose, a huge showman grin with white teeth; purple suit jacket,
+  white shirt, yellow bow tie, black trousers and shoes; holds an open silver briefcase full of green
+  cartoon cash stacks (no numbers, no symbols on the bills) in front of him with both hands. Facing the viewer.
