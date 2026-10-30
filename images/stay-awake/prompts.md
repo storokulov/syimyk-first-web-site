@@ -28,3 +28,8 @@ Background: a plain flat solid light-blue colour (#9BCFFD), nothing else, no che
   pupils, raised eyebrows, small rounded nose, a huge showman grin with white teeth; purple suit jacket,
   white shirt, yellow bow tie, black trousers and shoes; holds an open silver briefcase full of green
   cartoon cash stacks (no numbers, no symbols on the bills) in front of him with both hands. Facing the viewer.
+
+Cast heroes came back on the light-blue background (good). Keyed with
+`key_flat.py raw/<n>-hero.png raw/<n>-hero-cut.png` (border-connected + enclosed pockets of the background
+colour, un-blended rim), trimmed to `shorts/stay-awake/sprites/<n>-hero.png`, checked in `qa/cast-sheet.png`
+(`sheet.py`). No edge cut-offs. Bob has soft airbrush shading, a bit off the flat style; fine for now.
