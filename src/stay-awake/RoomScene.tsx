@@ -28,8 +28,8 @@ const camAt = track(
   REST,
   [
     {t0: 0, t1: 4.0, to: PUSH0},
-    {t0: 5.55, t1: 6.45, to: CU_BRAIN},
-    {t0: 8.3, t1: 9.15, to: STAGE},
+    {t0: 5.4, t1: 6.5, to: CU_BRAIN},
+    {t0: 8.2, t1: 9.15, to: STAGE},
     {t0: 12.3, t1: 13.4, to: STAGE_B},
     {t0: 21.3, t1: 22.35, to: CU_STARE},
     {t0: 24.4, t1: 25.5, to: CU_STARE_B},
@@ -100,7 +100,8 @@ const sign = (t: number) => {
 
 const dimAt = (t: number) => {
   if (t < T.day2) return 0;
-  const flicker = t < 20.45 && Math.floor(t * 24) % 3 === 0 ? 0.16 : 0;
+  // two soft dips, not a strobe
+  const flicker = 0.1 * (Math.sin(Math.PI * seg(t, 19.92, 20.0)) + Math.sin(Math.PI * seg(t, 20.14, 20.24)));
   return 0.2 * easeOut(seg(t, T.day2, 20.3)) * (1 - easeOut(seg(t, 63.3, 63.55))) + flicker;
 };
 
@@ -113,7 +114,7 @@ const derpy = (t: number, amount: number, ps: number): EyeState => ({
 
 // ------------------------------------------------------------------ cast
 
-const castPose = (who: Who, t: number) => {
+const castPose = (who: Who, t: number, kc: number) => {
   let [sx, sy] = breathe(t, PHASE[who]);
   let dx = 0;
   const b = bounce(t, THREE_AT[who], 0.07);
@@ -123,7 +124,8 @@ const castPose = (who: Who, t: number) => {
   if (t > ha && t < ha + 0.9) sy *= 1 + 0.03 * Math.abs(Math.sin(2 * Math.PI * 4.2 * (t - ha))) * (1 - (t - ha) / 0.9);
   const tired = easeInOut(seg(t, T.day2, 20.6)) * (1 - easeOut(seg(t, 63.3, 63.7)));
   sy *= 1 - 0.015 * tired;
-  dx += tired * (1.2 * wave(t, 9.3, PHASE[who]) + 0.8 * wave(t, 5.1, PHASE[who] + 0.2));
+  // tremble ~1-2 screen px whatever the zoom
+  dx += tired * Math.min(1, 0.75 / kc) * (1.2 * wave(t, 9.3, PHASE[who]) + 0.8 * wave(t, 5.1, PHASE[who] + 0.2));
   const deflate = easeOut(seg(t, T.nobody, 57.6)) * (1 - easeOutBack(seg(t, 63.3, 63.65)));
   sy *= 1 - 0.045 * deflate;
   sx *= 1 + 0.02 * deflate;
@@ -245,7 +247,7 @@ export const RoomScene: React.FC<{t: number}> = ({t}) => {
 
   // --- contestants
   const castEls = WHO.map((who) => {
-    const st = castPose(who, t);
+    const st = castPose(who, t, kc);
     return <Character key={who} p={CAST[who]} t={t} uid={`room-${who}`} sx={st.sx} sy={st.sy} dx={st.dx} face={st.face} />;
   });
 
