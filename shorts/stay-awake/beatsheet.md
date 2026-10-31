@@ -1,7 +1,9 @@
 # Beat sheet - Stay awake for $100,000
 
-Voice: ElevenLabs "James - Natural, Conversational, Warm", eleven_v4 -> `vo/take1.mp3` (64.4 s, peak -3.1 dBFS).
-Word times: `vo/words.json`. Beat constants: `timing.ts` (voice placed at 0.1 s, comp 64.8 s @ 60 fps).
+Voice: ElevenLabs "James - Natural, Conversational, Warm", eleven_v4 -> `public/stay-awake/vo/take1.mp3`
+(64.4 s, peak -3.1 dBFS). Word times: `public/stay-awake/vo/words.json`. Beat constants and cuts:
+`src/stay-awake/timing.ts` (voice placed at 0.1 s, comp 64.8 s @ 60 fps). The animation itself is the
+Remotion project at the repo root (`src/stay-awake/`); this table was the plan it was built from.
 
 Cast: MAX (energy-drink guy), LILY (confident), BOB (sleepy, chill), HOST (holds the cash case),
 3 CAMERAS on tripods that come alive (eye on the lens).
